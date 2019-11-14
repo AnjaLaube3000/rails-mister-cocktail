@@ -1,0 +1,9 @@
+<!-- we need @cocktail, @ingredient, @dose in our `simple_form_for` -->
+<div>
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%#= f.input :ingredient %>
+    <%#= f.input :dose %>
+    <%= f.submit %>
+  <% end %>
+</div>
