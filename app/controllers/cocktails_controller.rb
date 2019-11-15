@@ -4,7 +4,8 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @cocktail = cocktails.find(params[:cocktail_id])
+    @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
   end
 
   def new
@@ -12,9 +13,9 @@ class CocktailsController < ApplicationController
   end
 
   def create
-  @restaurant = Restaurant.new(restaurant_params)
+  @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
-      redirect_to ocktail_path(@cocktail)
+      redirect_to cocktail_path(@cocktail)
     else
       render "new"
     end
@@ -22,8 +23,8 @@ class CocktailsController < ApplicationController
 
 private
 
-  def cocktails_params
-    params.require(:cocktail).premit(:name)
+  def cocktail_params
+    params.require(:cocktail).permit(:name)
   end
 end
 

@@ -1,0 +1,8 @@
+<div>
+  <%= simple_form_for(@dose, @ingredient) do |f| %>
+    <%= f.input :ingredient %>
+    <%= f.input :dose %>
+    <!-- Submitt button should LINK TO NEWLY CREATED COCKTAIL page cocktail/new  -->
+    <%= f.submit "add description"%>
+  <% end %>
+</div>
