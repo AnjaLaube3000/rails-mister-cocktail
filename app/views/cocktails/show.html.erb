@@ -2,17 +2,17 @@
   <div>
     <h1><%= @cocktail.name %></h1>
 
-    <p>These are the ingredients:</p>
+    <p>Please mix:</p>
     <% @cocktail.doses.each do |dose| %>
-      <p> <%= dose.description %> --- <%= dose.ingredient.name %> <%= link_to "Delete ingredient", cocktail_dose_path(@cocktail, dose), method: :delete %> </p>
+      <p> <%= dose.amount %> - <%= dose.ingredient.name %> <%= link_to "Delete ingredient", cocktail_dose_path(@cocktail, dose), method: :delete %> </p>
     <% end %>
 
     <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :description %>
+      <%= f.input :amount %>
       <%= f.association :ingredient %>
-      <%= f.submit "add descriptions"%>
+      <%= f.submit "Add Ingredient"%>
     <% end %>
 
-    <p> <%= link_to "Show all cocktails", cocktails_path %></p>
+    <p> <%= link_to "Show all Cocktails", cocktails_path %></p>
   </div>
 </div>
