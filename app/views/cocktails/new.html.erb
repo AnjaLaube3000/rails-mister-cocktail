@@ -1,7 +1,10 @@
 <div class="body">
   <h1>Create a new Cocktail</h1>
+  <p>Please fill in name and upload an image</p>
   <%= simple_form_for(@cocktail) do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "add the cocktail"%>
   <% end %>
 </div>
